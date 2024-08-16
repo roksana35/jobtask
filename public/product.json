@@ -4,6 +4,7 @@
         "productImage": "https://i.ibb.co/6DX6jN1/7255.jpg",
         "description": "A sleek and modern wireless mouse with ergonomic design.",
         "price": 25.99,
+        "brand": "TechPro",
         "category": "Electronics",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-01T10:30:45Z"
@@ -13,6 +14,7 @@
         "productImage": "https://i.ibb.co/8PkWPMX/2151074246.jpg",
         "description": "Noise-cancelling over-ear headphones with deep bass.",
         "price": 79.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-02T11:45:30Z"
@@ -22,6 +24,7 @@
         "productImage": "https://i.ibb.co/pXNdFP2/5453984-2805141.jpg",
         "description": "Latest smartphone with high-resolution camera and fast processor.",
         "price": 699.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.8,
         "productCreationDateTime": "2024-08-03T12:15:00Z"
@@ -31,6 +34,7 @@
         "productImage": "https://i.ibb.co/pZYsCCf/2149829123.jpg",
         "description": "High-performance gaming laptop with RGB keyboard and powerful GPU.",
         "price": 1299.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-04T14:00:15Z"
@@ -40,6 +44,7 @@
         "productImage": "https://i.ibb.co/kxk3jx8/2150757537.jpg",
         "description": "Ultra HD 4K monitor with vibrant colors and fast refresh rate.",
         "price": 349.99,
+        "brand":"VivaWave",
         "category": "Electronics",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-05T09:30:45Z"
@@ -49,6 +54,7 @@
         "productImage": "https://i.ibb.co/RQ0Fj0H/2148761313.jpg",
         "description": "Ergonomic wireless keyboard with customizable keys.",
         "price": 49.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.4,
         "productCreationDateTime": "2024-08-06T08:15:20Z"
@@ -58,6 +64,7 @@
         "productImage": "https://i.ibb.co/Jm90B2y/daniel-canibano-JE3-ASpu-Eld4-unsplash.jpg",
         "description": "Smartwatch with heart rate monitor and GPS tracking.",
         "price": 199.99,
+        "brand": "TechPro",
         "category": "Wearables",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-07T16:45:50Z"
@@ -67,6 +74,7 @@
         "productImage": "https://i.ibb.co/4mPkRxx/8380919-3840998.jpg",
         "description": "Water-resistant fitness tracker with step counter and sleep monitor.",
         "price": 59.99,
+        "brand":"VivaWave",
         "category": "Wearables",
         "ratings": 4.3,
         "productCreationDateTime": "2024-08-08T07:20:35Z"
@@ -76,6 +84,7 @@
         "productImage": "https://i.ibb.co/hDcf0t8/119842.jpg",
         "description": "Professional DSLR camera with interchangeable lenses and 4K video recording.",
         "price": 899.99,
+        "brand":"VivaWave",
         "category": "Electronics",
         "ratings": 4.9,
         "productCreationDateTime": "2024-08-09T13:10:10Z"
@@ -85,6 +94,7 @@
         "productImage": "https://i.ibb.co/PQ9JFwp/3685314-2614.jpg",
         "description": "Compact portable speaker with Bluetooth connectivity and deep bass.",
         "price": 59.99,
+        "brand": "SmartTech",
         "category": "Audio",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-10T15:25:40Z"
@@ -94,6 +104,7 @@
         "productImage": "https://i.ibb.co/8dYrmP9/maarten-van-den-heuvel-1t-sb-Sg-Axs-unsplash.jpg",
         "description": "High-resolution tablet with stylus support and long battery life.",
         "price": 499.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-11T11:50:25Z"
@@ -103,6 +114,7 @@
         "productImage": "https://i.ibb.co/8Bm4j75/maarten-van-den-heuvel-0-SYJS6nf-R10-unsplash.jpg",
         "description": "Lightweight e-reader with adjustable backlight and large storage capacity.",
         "price": 129.99,
+        "brand": "SmartTech",
         "category": "Electronics",
         "ratings": 4.4,
         "productCreationDateTime": "2024-08-12T14:00:00Z"
@@ -112,6 +124,7 @@
         "productImage": "https://i.ibb.co/1mrjJrQ/aleks-dorohovich-EEl-ZSFXALI-unsplash.jpg",
         "description": "Next-gen gaming console with 4K gaming and fast loading times.",
         "price": 499.99,
+        "brand":"VivaWave",
         "category": "Electronics",
         "ratings": 4.8,
         "productCreationDateTime": "2024-08-13T10:45:30Z"
@@ -121,6 +134,7 @@
         "productImage": "https://i.ibb.co/kDgwHQM/haley-truong-p-BUTCr-OFl-L4-unsplash.jpg",
         "description": "Durable action camera with waterproof case and 4K video recording.",
         "price": 199.99,
+        "brand":"VivaWave",
         "category": "Electronics",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-14T08:30:20Z"
@@ -130,6 +144,7 @@
         "productImage": "https://i.ibb.co/3FBDSYB/romeo-a-Q9-Cqgvzh298-unsplash.jpg",
         "description": "Immersive VR headset with motion tracking and high-resolution display.",
         "price": 299.99,
+        "brand":"VivaWave",
         "category": "Electronics",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-15T18:20:55Z"
@@ -139,6 +154,7 @@
         "productImage": "https://i.ibb.co/SnS0PTy/jakub-zerdzicki-HXp-G1-S-INN8-unsplash.jpg",
         "description": "Energy-efficient smart light bulb with customizable colors and voice control.",
         "price": 19.99,
+        "brand":"HyperTrend",
         "category": "Home Automation",
         "ratings": 4.4,
         "productCreationDateTime": "2024-08-16T12:10:05Z"
@@ -148,6 +164,7 @@
         "productImage": "https://i.ibb.co/v4Km4TM/gabriella-clare-marino-r-M0-NHj3pg-WE-unsplash.jpg",
         "description": "Foldable electric scooter with long battery life and fast charging.",
         "price": 399.99,
+        "brand":"HyperTrend",
         "category": "Transportation",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-17T07:35:45Z"
@@ -157,6 +174,7 @@
         "productImage": "https://i.ibb.co/Rh2ycNM/dan-lefebvre-RFAHj4t-I37-Y-unsplash.jpg",
         "description": "Smart thermostat with remote control and energy-saving features.",
         "price": 149.99,
+        "brand": "SmartTech",
         "category": "Home Automation",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-18T11:55:15Z"
@@ -166,6 +184,7 @@
         "productImage": "https://i.ibb.co/yhdWBcf/onur-binay-GVHu2o-Jim-H4-unsplash.jpg",
         "description": "Smart robot vacuum cleaner with automatic scheduling and powerful suction.",
         "price": 249.99,
+        "brand":"VivaWave",
         "category": "Home Appliances",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-19T16:45:30Z"
@@ -175,6 +194,7 @@
         "productImage": "https://i.ibb.co/PcZL4gq/isaac-GRrj-Mlhrz-I0-unsplash.jpg",
         "description": "Stainless steel electric kettle with temperature control and fast boiling.",
         "price": 39.99,
+        "brand":"HyperTrend",
         "category": "Home Appliances",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-20T09:20:25Z"
@@ -184,6 +204,7 @@
         "productImage": "https://i.ibb.co/qy1MNXy/2151737131.jpg",
         "description": "Healthy air fryer with adjustable temperature and large cooking capacity.",
         "price": 129.99,
+        "brand":"HyperTrend",
         "category": "Home Appliances",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-21T14:35:40Z"
@@ -193,6 +214,7 @@
         "productImage": "https://i.ibb.co/McfVxfm/7189.jpg",
         "description": "High-capacity portable charger with fast charging and multiple ports.",
         "price": 29.99,
+        "brand":"HyperTrend",
         "category": "Accessories",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-22T13:00:45Z"
@@ -202,15 +224,18 @@
         "productImage": "https://i.ibb.co/7tN0Dt2/debagni-sarkhel-Qg-Gi96m12ec-unsplash.jpg",
         "description": "Durable digital watch with multiple time zones and stopwatch functionality.",
         "price": 49.99,
+        "brand": "TechPro",
         "category": "Wearables",
         "ratings": 4.3,
         "productCreationDateTime": "2024-08-23T10:25:30Z"
     },
     {
         "productName": "Smart Doorbell",
+        
         "productImage": "https://i.ibb.co/fQG5Mt4/6383.jpg",
         "description": "Smart doorbell with video recording and motion detection.",
         "price": 149.99,
+        "brand": "TechPro",
         "category": "Home Security",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-24T08:45:15Z"
@@ -220,6 +245,7 @@
         "productImage": "https://i.ibb.co/qkgQRby/riekus-w-LXk9e-HYE0-A-unsplash.jpg",
         "description": "Adjustable laptop stand with cooling fan and ergonomic design.",
         "price": 29.99,
+        "brand":"VivaWave",
         "category": "Accessories",
         "ratings": 4.4,
         "productCreationDateTime": "2024-08-25T11:10:00Z"
@@ -229,6 +255,7 @@
         "productImage": "https://i.ibb.co/TmTKhZf/oscar-helgstrand-Ke-VWt-Mw0fsw-unsplash.jpg",
         "description": "Fast wireless charger with multi-device compatibility.",
         "price": 39.99,
+        "brand": "TechPro",
         "category": "Accessories",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-26T12:35:50Z"
@@ -238,6 +265,7 @@
         "productImage": "https://i.ibb.co/wwfyQ7P/sebastian-scholz-nuki-IJk-Sskf-Eqr-M-unsplash.jpg",
         "description": "Smart lock with keyless entry and remote access control.",
         "price": 199.99,
+        "brand":"VivaWave",
         "category": "Home Security",
         "ratings": 4.6,
         "productCreationDateTime": "2024-08-27T14:15:35Z"
@@ -247,6 +275,7 @@
         "productImage": "https://i.ibb.co/82jKQfD/vinit-vispute-Ip-Iq-Jwxdiog-unsplash.jpg",
         "description": "True wireless earbuds with noise-cancellation and long battery life.",
         "price": 79.99,
+        "brand": "TechPro",
         "category": "Audio",
         "ratings": 4.7,
         "productCreationDateTime": "2024-08-28T09:55:45Z"
@@ -256,6 +285,7 @@
         "productImage": "https://i.ibb.co/6WcCLhY/felipe-bustillo-A9i-Vq-WIA-AA-unsplash.jpg",
         "description": "Portable Bluetooth speaker with deep bass and waterproof design.",
         "price": 59.99,
+        "brand":"HyperTrend",
         "category": "Audio",
         "ratings": 4.5,
         "productCreationDateTime": "2024-08-29T11:35:10Z"
@@ -265,6 +295,7 @@
         "productImage": "https://i.ibb.co/JszJJ0V/2148779238.jpg",
         "description": "Wi-Fi range extender with dual-band support and easy setup.",
         "price": 49.99,
+        "brand":"HyperTrend",
         "category": "Networking",
         "ratings": 4.4,
         "productCreationDateTime": "2024-08-30T08:20:30Z"
@@ -274,6 +305,7 @@
         "productImage": "https://i.ibb.co/BnQbT3H/2151047624.jpg",
         "description": "Smart LED bulb with adjustable brightness and color temperature.",
         "price": 24.99,
+        "brand":"HyperTrend",
         "category": "Home Automation",
         "ratings": 4.3,
         "productCreationDateTime": "2024-08-31T10:05:00Z"
@@ -283,6 +315,7 @@
         "productImage": "https://i.ibb.co/mGPWVx5/2150808001.jpg",
         "description": "Wireless security camera with night vision and motion detection.",
         "price": 99.99,
+        "brand": "TechPro",
         "category": "Home Security",
         "ratings": 4.6,
         "productCreationDateTime": "2024-09-01T09:45:20Z"
@@ -292,6 +325,7 @@
         "productImage": "https://i.ibb.co/5BdR9xM/sanju-pandita-SG7-PWB75-JO4-unsplash.jpg",
         "description": "Electric toothbrush with multiple brushing modes and timer.",
         "price": 79.99,
+        "brand":"HyperTrend",
         "category": "Personal Care",
         "ratings": 4.4,
         "productCreationDateTime": "2024-09-02T10:25:30Z"
@@ -301,6 +335,7 @@
         "productImage": "https://i.ibb.co/D8rpcHG/5135.jpg",
         "description": "Smart scale with body composition analysis and Bluetooth connectivity.",
         "price": 49.99,
+        "brand":"Innovix",
         "category": "Health & Fitness",
         "ratings": 4.5,
         "productCreationDateTime": "2024-09-03T11:35:40Z"
@@ -310,6 +345,7 @@
         "productImage": "https://i.ibb.co/BjMfgZB/12151.jpg",
         "description": "Ergonomic wireless game controller with responsive buttons and vibration feedback.",
         "price": 59.99,
+        "brand":"Innovix",
         "category": "Gaming",
         "ratings": 4.6,
         "productCreationDateTime": "2024-09-04T14:20:15Z"
@@ -319,6 +355,7 @@
         "productImage": "https://i.ibb.co/1mzttbv/96819.jpg",
         "description": "Compact portable projector with HD resolution and long battery life.",
         "price": 299.99,
+        "brand":"Innovix",
         "category": "Electronics",
         "ratings": 4.7,
         "productCreationDateTime": "2024-09-05T12:55:25Z"
@@ -328,6 +365,7 @@
         "productImage": "https://i.ibb.co/zGsCHX9/pexels-karolina-grabowska-4195408.jpg",
         "description": "Smart plug with voice control and energy monitoring.",
         "price": 29.99,
+        "brand":"Innovix",
         "category": "Home Automation",
         "ratings": 4.4,
         "productCreationDateTime": "2024-09-06T09:10:05Z"
@@ -337,6 +375,7 @@
         "productImage": "https://i.ibb.co/MkQYwZQ/agustin-fernandez-Znyjl9pba-Us-unsplash.jpg",
         "description": "Electric shaver with multiple cutting heads and waterproof design.",
         "price": 59.99,
+        "brand":"Innovix",
         "category": "Personal Care",
         "ratings": 4.5,
         "productCreationDateTime": "2024-09-07T08:35:30Z"
@@ -346,6 +385,7 @@
         "productImage": "https://i.ibb.co/b5vbYff/2150698665.jpg",
         "description": "Smart coffee maker with app control and programmable brew settings.",
         "price": 99.99,
+        "brand":"HyperTrend",
         "category": "Home Appliances",
         "ratings": 4.6,
         "productCreationDateTime": "2024-09-08T10:45:55Z"
@@ -355,6 +395,7 @@
         "productImage": "https://i.ibb.co/TTPQFj9/brock-wegner-p-WGUMQSWBw-I-unsplash.jpg",
         "description": "Bluetooth car kit with hands-free calling and music streaming.",
         "price": 39.99,
+        "brand":"Innovix",
         "category": "Automotive",
         "ratings": 4.3,
         "productCreationDateTime": "2024-09-09T12:20:45Z"

@@ -8,12 +8,14 @@ const Products = () => {
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(true);
     const [searchItem,setSearchItem]=useState('');
+    const [selectedCategory,setSelectedCategory]=useState('');
+    const [brandName,setBrandName]=useState('');
 
 
     const fetchProducts = async (page) => {
         setLoading(true);
         try {
-            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem } });
+            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName } });
             console.log('Fetched data:', result.data);
             
             if (result.data) {
@@ -31,11 +33,20 @@ const Products = () => {
 
     useEffect(() => {
         fetchProducts(currentPage);
-    }, [currentPage]);
+    }, [currentPage,selectedCategory,brandName]);
 
     const handleSearch=()=>{
         setCurrentPage(1); // Reset to first page on search
         fetchProducts(1, searchItem); // Fetch with the new search query
+    }
+
+
+    const handleCategoryChange=(e)=>{
+        setSelectedCategory(e.target.value);
+    }
+    const handleBrandChange=(e)=>{
+        setBrandName(e.target.value);
+        console.log('brandName:',brandName)
     }
 
     const formatDate = (dateString) => {
@@ -44,14 +55,50 @@ const Products = () => {
     };
     return (
         <div >
-            <div className="relative mb-4 w-80 mx-auto"> 
+            <div className="relative mb-4 w-[350px] lg:w-[420px] mx-auto"> 
             <input 
                 type="text"
                 placeholder="Search products by name..."
                 value={searchItem}
                 onChange={(e)=>setSearchItem(e.target.value)}
-                className="p-3 border border-gray-300 w-[323px] rounded-xl mb-4"
-            /> <button onClick={handleSearch} className="bg-blue-600 text-white absolute flex gap-2 right-0 top-1 rounded-lg p-2"> <RxMagnifyingGlass  className="items-center mt-1 justify-center"/>  Search</button>
+                className="p-3 border border-gray-300 w-[350px] lg:w-[420px] rounded-xl mb-4"
+            /> <button onClick={handleSearch} className="bg-blue-600 text-white absolute flex gap-2 right-1 top-1 rounded-lg p-2"> <RxMagnifyingGlass  className="items-center mt-1 justify-center"/>  Search</button>
+            </div>
+
+            <div className="mb-24">
+            <select 
+                    className="select select-bordered w-full max-w-xs"
+                    value={selectedCategory} // Set the current selected value
+                    onChange={handleCategoryChange} // Handle change
+                >
+                    <option disabled value="">Select Category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="wearables">Wearables</option>
+                    <option value="Home Appliances">Home Appliances</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Personal Care">Personal Care</option>
+                    <option value="Home Automation">Home Automation</option>
+                    <option value="Health & Fitness">Health & Fitness</option>
+                    <option value="Home Security">Home Security</option>
+                    <option value="Audio">Audio</option>
+                    <option value="Accessories">Accessories</option>
+                    {/* Add more categories as needed */}
+                </select>
+            <select 
+                    className="select select-bordered w-full max-w-xs"
+                    value={brandName} // Set the current selected value
+                    onChange={handleBrandChange} // Handle change
+                >
+                    <option disabled value="">Select Brand</option>
+                    <option value="TechPro">TechPro</option>
+                    <option value="SmartTech">SmartTech</option>
+                    <option value="VivaWave">VivaWave</option>
+                    <option value="HyperTrend">HyperTrend</option>
+                    <option value="Innovix">Innovix</option>
+                    
+                    {/* Add more categories as needed */}
+                </select>
             </div>
             
             {loading ? <p>Loading...</p> : (
@@ -101,9 +148,11 @@ const Products = () => {
                                   </div>
                                    <div className="flex gap-8">
                                  <p><span className="font-semibold text-black mr-1">Rating:</span>{product.ratings}</p>
-                                 <p><span className="font-semibold text-black mr-1">CreationDateTime:</span>{formatDate(product.productCreationDateTime)}</p>
+                                 <p><span className="font-semibold text-black mr-1">Brand:</span>{product.brand}</p>
+                                 
 
                                   </div>
+                                  <p><span className="font-semibold text-black mr-1">CreationDateTime:</span>{formatDate(product.productCreationDateTime)}</p>
                                 
                               </div>
                             </div>
