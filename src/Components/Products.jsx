@@ -12,13 +12,14 @@ const Products = () => {
     const [brandName,setBrandName]=useState('');
     const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [sortOption,setSortOption]=useState('');
 
 
     const fetchProducts = async (page) => {
         setLoading(true);
         try {
             const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName, minPrice: minPrice,
-                maxPrice: maxPrice, } });
+                maxPrice: maxPrice, sort:sortOption} });
             console.log('Fetched data:', result.data);
             
             if (result.data) {
@@ -36,7 +37,7 @@ const Products = () => {
 
     useEffect(() => {
         fetchProducts(currentPage);
-    }, [currentPage,selectedCategory,brandName,minPrice, maxPrice]);
+    }, [currentPage,selectedCategory,brandName,minPrice, maxPrice,sortOption]);
 
     const handleSearch=()=>{
         setCurrentPage(1); // Reset to first page on search
@@ -52,9 +53,15 @@ const Products = () => {
         console.log('brandName:',brandName)
     }
     const handlePriceRangeChange = (e) => {
-        const [min, max] = e.target.value.split('-').map(Number);
-        setMinPrice(min);
-        setMaxPrice(max);
+        const value = e.target.value;
+        if (value === '0-50') {
+            setMinPrice(0);
+            setMaxPrice(50);
+        } else {
+            const [min, max] = value.split('-').map(Number);
+            setMinPrice(min);
+            setMaxPrice(max);
+        }
     };
 
     const formatDate = (dateString) => {
@@ -73,13 +80,13 @@ const Products = () => {
             /> <button onClick={handleSearch} className="bg-blue-600 text-white absolute flex gap-2 right-1 top-1 rounded-lg p-2"> <RxMagnifyingGlass  className="items-center mt-1 justify-center"/>  Search</button>
             </div>
 
-            <div className="mb-24">
+            <div className="mb-24 grid grid-cols-2  lg:grid-cols-4 gap-4 lg:gap-10">
             <select 
                     className="select select-bordered w-full max-w-xs"
                     value={selectedCategory} // Set the current selected value
                     onChange={handleCategoryChange} // Handle change
                 >
-                    <option disabled value="">Select Category</option>
+                    <option disabled value="">Select By Category</option>
                     <option value="electronics">Electronics</option>
                     <option value="wearables">Wearables</option>
                     <option value="Home Appliances">Home Appliances</option>
@@ -98,7 +105,7 @@ const Products = () => {
                     value={brandName} // Set the current selected value
                     onChange={handleBrandChange} // Handle change
                 >
-                    <option disabled value="">Select Brand</option>
+                    <option disabled value="">Select By Brand</option>
                     <option value="TechPro">TechPro</option>
                     <option value="SmartTech">SmartTech</option>
                     <option value="VivaWave">VivaWave</option>
@@ -112,7 +119,7 @@ const Products = () => {
                     value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` : ""}
                     onChange={handlePriceRangeChange}
                 >
-                    <option disabled value="">Select Price Range</option>
+                    <option disabled value="">Select By Price Range</option>
                     <option value="0-50">$0 - $50</option>
                     <option value="51-100">$51 - $100</option>
                     <option value="101-200">$101 - $200</option>
@@ -121,16 +128,15 @@ const Products = () => {
                     <option value="1001-Infinity">Above $1000</option>
                 </select>
                 <select
-                    className="select select-bordered w-full max-w-xs"
-                    value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` : ""}
-                    onChange={handlePriceRangeChange}
-                >
-                    <option disabled value="">Short by</option>
-                    <option value="High t Low">High to Low</option>
-                    <option value="Low to High"> Low to High</option>
-                    <option value="Newest first">Newest first</option>
-                   
-                </select>
+    className="select select-bordered w-full max-w-xs"
+    value={sortOption}
+    onChange={(e) => setSortOption(e.target.value)} // Handle sorting change
+>
+    <option disabled value="">Sort by</option>
+    <option value="price-asc">Price: Low to High</option>
+    <option value="price-desc">Price: High to Low</option>
+    <option value="date-desc">Date Added: Newest First</option>
+</select>
             </div>
             
             {loading ? <p>Loading...</p> : (
