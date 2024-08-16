@@ -116,7 +116,7 @@ const Products = () => {
                 </select>
                 <select
                     className="select select-bordered w-full max-w-xs"
-                    value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` : ""}
+                    value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` :""}
                     onChange={handlePriceRangeChange}
                 >
                     <option disabled value="">Select By Price Range</option>
