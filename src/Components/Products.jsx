@@ -10,12 +10,15 @@ const Products = () => {
     const [searchItem,setSearchItem]=useState('');
     const [selectedCategory,setSelectedCategory]=useState('');
     const [brandName,setBrandName]=useState('');
+    const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
 
     const fetchProducts = async (page) => {
         setLoading(true);
         try {
-            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName } });
+            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName, minPrice: minPrice,
+                maxPrice: maxPrice, } });
             console.log('Fetched data:', result.data);
             
             if (result.data) {
@@ -33,7 +36,7 @@ const Products = () => {
 
     useEffect(() => {
         fetchProducts(currentPage);
-    }, [currentPage,selectedCategory,brandName]);
+    }, [currentPage,selectedCategory,brandName,minPrice, maxPrice]);
 
     const handleSearch=()=>{
         setCurrentPage(1); // Reset to first page on search
@@ -48,6 +51,11 @@ const Products = () => {
         setBrandName(e.target.value);
         console.log('brandName:',brandName)
     }
+    const handlePriceRangeChange = (e) => {
+        const [min, max] = e.target.value.split('-').map(Number);
+        setMinPrice(min);
+        setMaxPrice(max);
+    };
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -98,6 +106,30 @@ const Products = () => {
                     <option value="Innovix">Innovix</option>
                     
                     {/* Add more categories as needed */}
+                </select>
+                <select
+                    className="select select-bordered w-full max-w-xs"
+                    value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` : ""}
+                    onChange={handlePriceRangeChange}
+                >
+                    <option disabled value="">Select Price Range</option>
+                    <option value="0-50">$0 - $50</option>
+                    <option value="51-100">$51 - $100</option>
+                    <option value="101-200">$101 - $200</option>
+                    <option value="201-500">$201 - $500</option>
+                    <option value="501-1000">$501 - $1000</option>
+                    <option value="1001-Infinity">Above $1000</option>
+                </select>
+                <select
+                    className="select select-bordered w-full max-w-xs"
+                    value={minPrice && maxPrice ? `${minPrice}-${maxPrice}` : ""}
+                    onChange={handlePriceRangeChange}
+                >
+                    <option disabled value="">Short by</option>
+                    <option value="High t Low">High to Low</option>
+                    <option value="Low to High"> Low to High</option>
+                    <option value="Newest first">Newest first</option>
+                   
                 </select>
             </div>
             
