@@ -1,16 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { RxMagnifyingGlass } from "react-icons/rx";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [searchItem,setSearchItem]=useState('');
+
 
     const fetchProducts = async (page) => {
         setLoading(true);
         try {
-            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9 } });
+            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem } });
             console.log('Fetched data:', result.data);
             
             if (result.data) {
@@ -30,8 +33,27 @@ const Products = () => {
         fetchProducts(currentPage);
     }, [currentPage]);
 
+    const handleSearch=()=>{
+        setCurrentPage(1); // Reset to first page on search
+        fetchProducts(1, searchItem); // Fetch with the new search query
+    }
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-GB'); // Format as DD/MM/YYYY
+    };
     return (
-        <div>
+        <div >
+            <div className="relative mb-4 w-80 mx-auto"> 
+            <input 
+                type="text"
+                placeholder="Search products by name..."
+                value={searchItem}
+                onChange={(e)=>setSearchItem(e.target.value)}
+                className="p-3 border border-gray-300 w-[323px] rounded-xl mb-4"
+            /> <button onClick={handleSearch} className="bg-blue-600 text-white absolute flex gap-2 right-0 top-1 rounded-lg p-2"> <RxMagnifyingGlass  className="items-center mt-1 justify-center"/>  Search</button>
+            </div>
+            
             {loading ? <p>Loading...</p> : (
                 <>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 ">
@@ -63,7 +85,7 @@ const Products = () => {
                             //     </div>
                             //   </div>
                               <div key={product._id} className="card bg-base-100  shadow-xl">
-                              <figure className="px-10 pt-10">
+                              <figure className="px-8 pt-10">
                                 <img
                                   src={product.productImage}
                                   alt="Shoes"
@@ -71,15 +93,15 @@ const Products = () => {
                               </figure>
                               <div className="card-body ">
                                 <h2 className="card-title">{product.productName}</h2>
-                                <p>{product.description}</p>
+                                <p className="p-0 m-0">{product.description}</p>
                                 <div className="flex gap-8">
-                                  <p>{product.price}</p>
-                                    <p>{product.category}</p>
+                                  <p><span className="font-semibold text-black mr-1">Price:</span>  $ {product.price}</p>
+                                    <p><span className="font-semibold text-black mr-1">Category:</span>{product.category}</p>
                                     
                                   </div>
                                    <div className="flex gap-8">
-                                 <p>{product.ratings}</p>
-                                 <p>{product.productCreationDateTime}</p>
+                                 <p><span className="font-semibold text-black mr-1">Rating:</span>{product.ratings}</p>
+                                 <p><span className="font-semibold text-black mr-1">CreationDateTime:</span>{formatDate(product.productCreationDateTime)}</p>
 
                                   </div>
                                 
@@ -91,7 +113,7 @@ const Products = () => {
                         )}
                     </div>
                     <div className="mx-auto text-center m-16">
-                        <button className="btn btn-active btn-primary"
+                        <button className="btn btn-active btn-primary mr-4"
                             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                             disabled={currentPage === 1}
                         >
@@ -99,7 +121,7 @@ const Products = () => {
                         </button>
                         <span> Page {currentPage} of {totalPages} </span>
                         <button
-                        className="btn btn-active btn-primary"
+                        className="btn btn-active btn-primary ml-4"
                             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                             disabled={currentPage === totalPages}
                         >
