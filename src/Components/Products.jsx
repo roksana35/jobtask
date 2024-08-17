@@ -45,7 +45,7 @@ const Products = () => {
     }
 
 
-    const handleCategoryChange=(e)=>{
+    const  handleCategoryChange=(e)=>{
         setSelectedCategory(e.target.value);
     }
     const handleBrandChange=(e)=>{
