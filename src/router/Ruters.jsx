@@ -4,6 +4,8 @@ import Login from "../Components/Login";
 
 import Main from "../Components/layout/Main";
 import Products from "../Components/Products";
+import PrivateRoute from "../Components/PrivateRoute";
+import Home from "../Components/layout/Home";
 
 const router = createBrowserRouter([
     {
@@ -12,15 +14,15 @@ const router = createBrowserRouter([
         children: [
 
             {
-                path: '/',
-                element: <Products/>,
+                path:'/',
+                element:<PrivateRoute><Home></Home></PrivateRoute>,
             },
             {
-                path: '/login',
-                element: <Login />,
+                path:'/login',
+                element:<Login />,
             },
             {
-                path: '/register',
+                path:'/register',
                 element: <Register />,
             },
         ],

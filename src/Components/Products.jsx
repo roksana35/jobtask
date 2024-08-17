@@ -18,9 +18,9 @@ const Products = () => {
     const fetchProducts = async (page) => {
         setLoading(true);
         try {
-            const result = await axios.get('http://localhost:5000/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName, minPrice: minPrice,
+            const result = await axios.get('https://jobtask-server-beta.vercel.app/products', { params: { page, limit: 9,searchItem,category:selectedCategory,brand:brandName, minPrice: minPrice,
                 maxPrice: maxPrice, sort:sortOption} });
-            console.log('Fetched data:', result.data);
+            // console.log('Fetched data:', result.data);
             
             if (result.data) {
                 setCurrentPage(result.data.currentPage);
@@ -30,7 +30,7 @@ const Products = () => {
                 console.warn('No data returned from the server');
             }
         } catch (error) {
-            console.error('Error fetching products:', error);
+            // console.error('Error fetching products:', error);
         }
         setLoading(false);
     };
@@ -50,7 +50,7 @@ const Products = () => {
     }
     const handleBrandChange=(e)=>{
         setBrandName(e.target.value);
-        console.log('brandName:',brandName)
+        // console.log('brandName:',brandName)
     }
     const handlePriceRangeChange = (e) => {
         const value = e.target.value;
@@ -69,18 +69,18 @@ const Products = () => {
         return date.toLocaleDateString('en-GB'); // Format as DD/MM/YYYY
     };
     return (
-        <div >
-            <div className="relative mb-4 w-[350px] lg:w-[420px] mx-auto"> 
+        <div className="sm:mt-8">
+            <div className="relative mb-4 w-[270px]  md:w-[360px] lg:w-[420px] mx-auto"> 
             <input 
                 type="text"
-                placeholder="Search products by name..."
+                placeholder="Search by products name..."
                 value={searchItem}
                 onChange={(e)=>setSearchItem(e.target.value)}
-                className="p-3 border border-gray-300 w-[350px] lg:w-[420px] rounded-xl mb-4"
+                className="p-3 border text-sm lg:text-base border-gray-300 w-[270px] md:w-[360px] lg:w-[420px] rounded-xl mb-4"
             /> <button onClick={handleSearch} className="bg-blue-600 text-white absolute flex gap-2 right-1 top-1 rounded-lg p-2"> <RxMagnifyingGlass  className="items-center mt-1 justify-center"/>  Search</button>
             </div>
 
-            <div className="mb-24 grid grid-cols-2  lg:grid-cols-4 gap-4 lg:gap-10">
+            <div className="mb-24 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 lg:gap-10">
             <select 
                     className="select select-bordered w-full max-w-xs"
                     value={selectedCategory} // Set the current selected value
@@ -141,7 +141,7 @@ const Products = () => {
             
             {loading ? <p>Loading...</p> : (
                 <>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 ">
                         {products.length ? (
                             products.map(product => (
                             //     <div key={product._id} className="card bg-base-100 shadow-xl">
@@ -170,11 +170,11 @@ const Products = () => {
                             //     </div>
                             //   </div>
                               <div key={product._id} className="card bg-base-100  shadow-xl">
-                              <figure className="px-8 pt-10">
+                              <figure className=" px-4 pt-4 lg:px-8 lg:pt-10">
                                 <img
                                   src={product.productImage}
                                   alt="Shoes"
-                                  className="rounded-xl w-full h-[250px]" />
+                                  className="rounded-xl w-full h-[220px] lg:h-[250px]" />
                               </figure>
                               <div className="card-body ">
                                 <h2 className="card-title">{product.productName}</h2>
