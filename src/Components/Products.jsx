@@ -141,7 +141,7 @@ const Products = () => {
             
             {loading ? <p>Loading...</p> : (
                 <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 ">
                         {products.length ? (
                             products.map(product => (
                             //     <div key={product._id} className="card bg-base-100 shadow-xl">
@@ -169,7 +169,7 @@ const Products = () => {
                             //       </div>
                             //     </div>
                             //   </div>
-                              <div key={product._id} className="card bg-base-100  shadow-xl">
+                              <div key={product._id} className="card bg-base-100  shadow-xl overflow-hidden">
                               <figure className=" px-4 pt-4 lg:px-8 lg:pt-10">
                                 <img
                                   src={product.productImage}
@@ -179,18 +179,18 @@ const Products = () => {
                               <div className="card-body ">
                                 <h2 className="card-title">{product.productName}</h2>
                                 <p className="p-0 m-0">{product.description}</p>
-                                <div className="flex gap-8">
-                                  <p><span className="font-semibold text-black mr-1">Price:</span>  $ {product.price}</p>
+                                <div className="flex gap-4">
+                                  <p><span className="font-semibold text-black mr-1">Price:</span>${product.price}</p>
                                     <p><span className="font-semibold text-black mr-1">Category:</span>{product.category}</p>
                                     
                                   </div>
-                                   <div className="flex gap-8">
+                                   <div className="flex gap-4">
                                  <p><span className="font-semibold text-black mr-1">Rating:</span>{product.ratings}</p>
                                  <p><span className="font-semibold text-black mr-1">Brand:</span>{product.brand}</p>
                                  
 
                                   </div>
-                                  <p><span className="font-semibold text-black mr-1">CreationDateTime:</span>{formatDate(product.productCreationDateTime)}</p>
+                                  
                                 
                               </div>
                             </div>
